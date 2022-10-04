@@ -1,38 +1,131 @@
-# create-svelte
+# Getting Started With Svelte (Stop Using React!)
 
-Everything you need to build a Svelte project, powered by [`create-svelte`](https://github.com/sveltejs/kit/tree/master/packages/create-svelte).
+![Banner](./docs/images/banner.png)
 
-## Creating a project
+**Learn why Svelte has recently been voted the most loved web framework & let's build your first Svelte App with a Kintone Database**  
 
-If you're seeing this, you've probably already done this step. Congrats!
+Our free, live workshop will walk you through creating a Web Database App, setting up a Svelte project, and using GET and POST requests to save to a Kintone web database.
 
-```bash
-# create a new project in the current directory
-npm create svelte@latest
+## Outline <!-- omit in toc -->
+- [Getting Started With Svelte (Stop Using React!)](#getting-started-with-svelte-stop-using-react)
+  - [Get Started](#get-started)
+  - [Get Your Free Kintone Database](#get-your-free-kintone-database)
+  - [Create a Kintone Web Database App](#create-a-kintone-web-database-app)
+  - [Kintone API Token](#kintone-api-token)
+  - [Create a `.env` File](#create-a-env-file)
+  - [Appendix](#appendix)
+    - [What is Svelte?](#what-is-svelte)
+    - [What is Kintone?](#what-is-kintone)
+  - [Debugging - Let's Fix Those Problems 💪](#debugging---lets-fix-those-problems-)
+    - [`npm install` command is not working](#npm-install-command-is-not-working)
 
-# create a new project in my-app
-npm create svelte@latest my-app
+---
+
+## Get Started
+
+First, clone the [kintone-workshops/intro-to-svelte](https://github.com/kintone-workshops/intro-to-svelte) repo!  🚀  
+Then go inside the folder.
+
+Once you are inside the folder, let's install the dependencies!
+
+```shell
+cd Downloads
+
+git clone https://github.com/kintone-workshops/intro-to-svelte
+
+cd intro-to-svelte
 ```
 
-## Developing
+Open the `intro-to-svelte` folder in [VS Code](https://code.visualstudio.com/docs/getstarted/tips-and-tricks#_command-line)
 
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
-
-```bash
-npm run dev
-
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
+```shell
+code .
 ```
 
-## Building
+## Get Your Free Kintone Database
 
-To create a production version of your app:
+[bit.ly/KDP_NEW](http://bit.ly/KDP_NEW)
+* ⚡ Only use lowercase, numbers, & hyphens in your subdomain
+* ⚠ Do not use uppercase or special characters
 
-```bash
-npm run build
+|                                                                                            |                                                                                                                      |
+| ------------------------------------------------------------------------------------------ | -------------------------------------------------------------------------------------------------------------------- |
+| ![Step 1: Fill out the Kintone Developer license sign-up form](./docs/images/SignUp-1.png) | ![Step 2: Email address will be the login name & the subdomain will be your unique link](./docs/images/SignUp-2.png) |
+
+---
+
+## Create a Kintone Web Database App
+
+Under Construction
+
+---
+
+## Kintone API Token
+
+To generate an API Token for a Kintone App:
+
+1. Go to the Kintone App
+1. Go to the Gear icon ⚙️ (top right corner) > Open the App Settings page
+1. Click on the **App Settings** Tab > Click on **API Token** settings
+1. Click the `Generate` button to generate a token
+1. Enable the `Add records` and `Edit records` checkboxes
+1. Click the `Save` button (top left corner) to save the token setting
+1. Finally, click the `Update App` button (top right corner) to implement the token setting change.
+
+Confused? 🤔 → Check out the gif below:
+
+<details>
+  <summary>Generate a Kintone API Token Gif 📺</summary>
+
+  ![APIToken.gif](./docs/images/APIToken.gif)
+
+</details>
+
+---
+
+## Create a `.env` File
+
+1. Using the [.env.example](.env.example) file as a template, create a `.env` file.
+1. Then input your Kintone credentials like the following:
+
+```txt
+SUBDOMAIN = "example"
+APPID = "1"
+APITOKEN = "abcdefghijklmnopqrstuvwxyz"
 ```
 
-You can preview the production build with `npm run preview`.
+### ⚠️ DO NOT DELETE THE [.env.example](.env.example) FILE!  <!-- omit in toc -->
+[.env.example](.env.example) is used by env-cmd to verify that `.env` file is correctly configured.
 
-> To deploy your app, you may need to install an [adapter](https://kit.svelte.dev/docs/adapters) for your target environment.
+---
+
+## Appendix
+
+### What is Svelte?
+
+Svelte is a free, open-source frontend JavaScript framework for making interactive web apps.
+
+* Unlike React, Svelte compiles code to small, framework-less vanilla JS to optimize for speed
+* Unlike React, Svelte surgically updates the DOM, so you don't have to worry about a virtual DOM diffing.
+
+### What is Kintone?
+
+Kintone is a no-code/low-code cloud platform for teams to quickly & easily share and collaborate on their data.
+
+You can add JavaScript, CSS, &/or HTML to enhance the frontend UI/UX of a Kintone App. This can include features such as maps, buttons, and color-coding.
+
+Read up on how to customize and develop on the Kintone platform at [kintone.dev](https://kintone.dev/)
+
+---
+
+## Debugging - Let's Fix Those Problems 💪
+
+Here is a rundown of common problems that may occur & their solutions!
+
+### `npm install` command is not working
+
+1. Verify the Node.js & npm versions **inside** the `intro-to-svelte` folder
+2. Just installed Node.js? Verify you configured Node.js versions **inside** the `intro-to-svelte` folder
+
+* Mac: `nodenv local 14.5.0`
+* Windows: `nvm use 14.5.0`
