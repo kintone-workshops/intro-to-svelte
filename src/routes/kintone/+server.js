@@ -18,8 +18,6 @@ export async function GET() {
 
   let response = await fetch(getRecordsURL, fetchOptions);
   const responseData = await response.json();
-
-  console.log(responseData.records);
   return new json(responseData.records);
 }
 

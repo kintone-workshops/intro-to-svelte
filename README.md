@@ -26,8 +26,6 @@ Our free, live workshop will walk you through creating a Web Database App, setti
 First, clone the [kintone-workshops/intro-to-svelte](https://github.com/kintone-workshops/intro-to-svelte) repo!  🚀  
 Then go inside the folder.
 
-Once you are inside the folder, let's install the dependencies!
-
 ```shell
 cd Downloads
 
@@ -36,10 +34,18 @@ git clone https://github.com/kintone-workshops/intro-to-svelte
 cd intro-to-svelte
 ```
 
-Open the `intro-to-svelte` folder in [VS Code](https://code.visualstudio.com/docs/getstarted/tips-and-tricks#_command-line)
+Open the `intro-to-svelte` folder in [VS Code](https://code.visualstudio.com/docs/getstarted/tips-and-tricks#_command-line) as well:
 
 ```shell
 code .
+```
+
+Once you are inside the folder, let's install the dependencies and open our project:
+
+```shell
+npm install
+
+npm run dev
 ```
 
 ## Get Your Free Kintone Database

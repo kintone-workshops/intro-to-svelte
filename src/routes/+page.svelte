@@ -29,9 +29,7 @@
 		}
 	};
 
-	const addCard = async (title, color) => {
-		console.log(title);
-		console.log(color);
+	const addCard = async (addCardTitle, addCardColor) => {
 		try {
 			const cardsRequest = await fetch('/kintone', {
 				method: 'POST',
@@ -40,13 +38,13 @@
 					'content-type': 'application/json'
 				},
 				body: JSON.stringify({
-					title: title,
-					color: color
+					title: addCardTitle,
+					color: addCardColor
 				})
 			});
 			const cardResponse = await cardsRequest.json();
-			console.log('RESPONSE');
-			console.log(cardResponse);
+			title = ''
+			getCards();
 		} catch (error) {
 			console.log(error);
 		}
@@ -68,15 +66,15 @@
 					<div
 						class:blue-card={card.color === 'Blue'}
 						class:red-card={card.color === 'Red'}
-						in:fly|local={{ y: 200, duration: 2000 + i * 1000 }}
+						in:fly|local={{ y: 200, duration: 2000 + i * 10000 }}
 					>
 						<p>{card.title}</p>
 						<label>
-							<input type="radio" bind:group={card.color} value="Red" name="color" />
+							<input type="radio" bind:group={card.color} value="Red" name={i} />
 							Red
 						</label>
 						<label>
-							<input type="radio" bind:group={card.color} value="Blue" name="color" />
+							<input type="radio" bind:group={card.color} value="Blue" name={i} />
 							Blue
 						</label>
 					</div>
@@ -88,11 +86,11 @@
 			<div class:blue-card={color === 'Blue'} class:red-card={color === 'Red'}>
 				<input type="text" bind:value={title} placeholder="My Card Title" />
 				<label>
-					<input type="radio" bind:group={color} value="Red" name="color" />
+					<input type="radio" bind:group={color} value="Red" name="addCard" />
 					Red
 				</label>
 				<label>
-					<input type="radio" bind:group={color} value="Blue" name="color" />
+					<input type="radio" bind:group={color} value="Blue" name="addCard" />
 					Blue
 				</label>
 			</div>
