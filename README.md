@@ -90,6 +90,17 @@ npm run dev
 ### Last, don't forget to save your changes!
 ![updateApp](./docs/images/updateApp.png)
 
+| #   | Step                                               | Screenshot                                              |
+| --- | -------------------------------------------------- | ------------------------------------------------------- |
+| 1   | From your portal, click the add app button         | ![Portal](./docs/images/portal.png)                     |
+| 2   | And create an app from scratch                     | ![CreateApp](./docs/images/create-app.png)              |
+| 3   | Add a Text box, and a Radio Button                 | ![build-database-1](./docs/images/build-database-1.png) |
+| 4   | Edit the settings of the text box                  | ![build-database-2](./docs/images/build-database-2.png) |
+| 5   | Change the label, and field code (case sensitive!) | ![build-database-3](./docs/images/build-database-3.png) |
+| 6   | Once more for the Radio Button                     | ![build-database-4](./docs/images/build-database-4.png) |
+| 7   | Change the label, and field code (case sensitive!) | ![build-database-5](./docs/images/build-database-5.png) |
+| 8   | Last, don't forget to save your changes!           | ![updateApp](./docs/images/updateApp.png)               |
+
 ---
 
 ## Kintone API Token
