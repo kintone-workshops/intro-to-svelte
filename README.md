@@ -8,9 +8,18 @@ Our free, live workshop will walk you through creating a Web Database App, setti
 
 ## Outline <!-- omit in toc -->
 - [Getting Started With Svelte (Stop Using React!)](#getting-started-with-svelte-stop-using-react)
+  - [Finished Project](#finished-project)
   - [Get Started](#get-started)
   - [Get Your Free Kintone Database](#get-your-free-kintone-database)
   - [Create a Kintone Web Database App](#create-a-kintone-web-database-app)
+        - [From your portal, click the add app button](#from-your-portal-click-the-add-app-button)
+        - [And create an app from scratch](#and-create-an-app-from-scratch)
+        - [Add a Text box, and a Radio Button](#add-a-text-box-and-a-radio-button)
+        - [Edit the settings of the text box](#edit-the-settings-of-the-text-box)
+        - [Change the label, and field code (case sensitive!)](#change-the-label-and-field-code-case-sensitive)
+        - [Once more for the Radio Button](#once-more-for-the-radio-button)
+        - [Change the label, and field code (case sensitive!)](#change-the-label-and-field-code-case-sensitive-1)
+        - [Last, don't forget to save your changes!](#last-dont-forget-to-save-your-changes)
   - [Kintone API Token](#kintone-api-token)
   - [Create a `.env` File](#create-a-env-file)
   - [Appendix](#appendix)
@@ -20,6 +29,9 @@ Our free, live workshop will walk you through creating a Web Database App, setti
     - [`npm install` command is not working](#npm-install-command-is-not-working)
 
 ---
+
+## Finished Project
+![Finished-Project](./docs/images/finished-project.gif)
 
 ## Get Started
 
@@ -62,7 +74,22 @@ npm run dev
 
 ## Create a Kintone Web Database App
 
-Under Construction
+##### From your portal, click the add app button
+![Portal](./docs/images/portal.png)
+##### And create an app from scratch
+![CreateApp](./docs/images/create-app.png)
+##### Add a Text box, and a Radio Button
+![build-database-1](./docs/images/build-database-1.png)
+##### Edit the settings of the text box
+![build-database-1](./docs/images/build-database-2.png)
+##### Change the label, and field code (case sensitive!)
+![build-database-1](./docs/images/build-database-3.png)
+##### Once more for the Radio Button
+![build-database-1](./docs/images/build-database-4.png)
+##### Change the label, and field code (case sensitive!)
+![build-database-1](./docs/images/build-database-5.png)
+##### Last, don't forget to save your changes!
+![updateApp](./docs/images/updateApp.png)
 
 ---
 

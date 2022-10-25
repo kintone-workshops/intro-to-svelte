@@ -66,7 +66,7 @@
 					<div
 						class:blue-card={card.color === 'Blue'}
 						class:red-card={card.color === 'Red'}
-						in:fly|local={{ y: 200, duration: 2000 + i * 400 }}
+						in:fly|local={{ y: 200, duration: 2000 + i * 10000 }}
 					>
 						<p>{card.title}</p>
 						<label>
