@@ -107,9 +107,9 @@ Confused? 🤔 → Check out the gif below:
 1. Then input your Kintone credentials like the following:
 
 ```txt
-SUBDOMAIN = "example"
-APPID = "1"
-APITOKEN = "abcdefghijklmnopqrstuvwxyz"
+VITE_SUBDOMAIN = "example"
+VITE_APPID = "1"
+VITE_APITOKEN = "abcdefghijklmnopqrstuvwxyz"
 ```
 
 ### ⚠️ DO NOT DELETE THE [.env.example](.env.example) FILE!  <!-- omit in toc -->
