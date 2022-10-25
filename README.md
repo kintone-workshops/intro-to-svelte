@@ -12,14 +12,14 @@ Our free, live workshop will walk you through creating a Web Database App, setti
   - [Get Started](#get-started)
   - [Get Your Free Kintone Database](#get-your-free-kintone-database)
   - [Create a Kintone Web Database App](#create-a-kintone-web-database-app)
-        - [From your portal, click the add app button](#from-your-portal-click-the-add-app-button)
-        - [And create an app from scratch](#and-create-an-app-from-scratch)
-        - [Add a Text box, and a Radio Button](#add-a-text-box-and-a-radio-button)
-        - [Edit the settings of the text box](#edit-the-settings-of-the-text-box)
-        - [Change the label, and field code (case sensitive!)](#change-the-label-and-field-code-case-sensitive)
-        - [Once more for the Radio Button](#once-more-for-the-radio-button)
-        - [Change the label, and field code (case sensitive!)](#change-the-label-and-field-code-case-sensitive-1)
-        - [Last, don't forget to save your changes!](#last-dont-forget-to-save-your-changes)
+      - [From your portal, click the add app button](#from-your-portal-click-the-add-app-button)
+      - [And create an app from scratch](#and-create-an-app-from-scratch)
+      - [Add a Text box, and a Radio Button](#add-a-text-box-and-a-radio-button)
+      - [Edit the settings of the text box](#edit-the-settings-of-the-text-box)
+      - [Change the label, and field code (case sensitive!)](#change-the-label-and-field-code-case-sensitive)
+      - [Once more for the Radio Button](#once-more-for-the-radio-button)
+      - [Change the label, and field code (case sensitive!)](#change-the-label-and-field-code-case-sensitive-1)
+      - [Last, don't forget to save your changes!](#last-dont-forget-to-save-your-changes)
   - [Kintone API Token](#kintone-api-token)
   - [Create a `.env` File](#create-a-env-file)
   - [Appendix](#appendix)
@@ -74,21 +74,21 @@ npm run dev
 
 ## Create a Kintone Web Database App
 
-##### From your portal, click the add app button
+#### From your portal, click the add app button
 ![Portal](./docs/images/portal.png)
-##### And create an app from scratch
+#### And create an app from scratch
 ![CreateApp](./docs/images/create-app.png)
-##### Add a Text box, and a Radio Button
+#### Add a Text box, and a Radio Button
 ![build-database-1](./docs/images/build-database-1.png)
-##### Edit the settings of the text box
-![build-database-1](./docs/images/build-database-2.png)
-##### Change the label, and field code (case sensitive!)
-![build-database-1](./docs/images/build-database-3.png)
-##### Once more for the Radio Button
-![build-database-1](./docs/images/build-database-4.png)
-##### Change the label, and field code (case sensitive!)
-![build-database-1](./docs/images/build-database-5.png)
-##### Last, don't forget to save your changes!
+#### Edit the settings of the text box
+![build-database-2](./docs/images/build-database-2.png)
+#### Change the label, and field code (case sensitive!)
+![build-database-3](./docs/images/build-database-3.png)
+#### Once more for the Radio Button
+![build-database-4](./docs/images/build-database-4.png)
+#### Change the label, and field code (case sensitive!)
+![build-database-5](./docs/images/build-database-5.png)
+#### Last, don't forget to save your changes!
 ![updateApp](./docs/images/updateApp.png)
 
 ---
