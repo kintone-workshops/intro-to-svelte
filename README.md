@@ -2,7 +2,7 @@
 
 ![Banner](./docs/images/banner.png)
 
-**Learn why Svelte has recently been voted the most loved web framework & let's build your first Svelte App with a Kintone Database**  
+Learn why **Svelte is the most loved web framework** & let's **build your first Svelte App** with a Kintone Database!
 
 Our free, live workshop will walk you through creating a Web Database App, setting up a Svelte project, and using GET and POST requests to save to a Kintone web database.
 
