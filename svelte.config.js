@@ -13,7 +13,10 @@ const config = {
 			pages: 'build',
 			assets: 'build',
 			fallback: '200.html'
-		})
+		}),
+		paths: {
+			base: '/intro-to-svelte',
+		},
 	}
 };
 
