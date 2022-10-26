@@ -149,7 +149,9 @@ Two tasks in `+server.js` file:
 ### Solutions to the Tasks
 
 <details>
-  <summary>Task 1</summary>
+  <summary>Task 1 - Add the cards from Kintone to the cardInfo array</summary>
+
+  File: [src/routes/+page.svelte](src/routes/+page.svelte)
 
   ```javascript
   cardsInfo.forEach((card) => {
@@ -169,7 +171,9 @@ Two tasks in `+server.js` file:
 </details>
 
 <details>
-  <summary>Task 2</summary>
+  <summary>Task 2 - Add a loop to go through the cardInfo array and display the cards</summary>
+
+  File: [src/routes/+page.svelte](src/routes/+page.svelte)
 
   ```javascript
     {#each cards as card, i}
@@ -194,7 +198,9 @@ Two tasks in `+server.js` file:
 </details>
 
 <details>
-  <summary>Task 3</summary>
+  <summary>Task 3 - Get our title and color of the card to POST to Kintone</summary>
+
+  File: [src/routes/kintone/+server.js](src/routes/kintone/+server.js)
 
   ```javascript
   const body = await request.json();
@@ -216,7 +222,9 @@ Two tasks in `+server.js` file:
 </details>
 
 <details>
-  <summary>Task 4</summary>
+  <summary>Task 4 - Try filling out this POST fetch to Kintone</summary>
+
+  File: [src/routes/kintone/+server.js](src/routes/kintone/+server.js)
 
   ```javascript
   try {
