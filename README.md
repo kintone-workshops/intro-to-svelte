@@ -13,11 +13,18 @@ Our free, live workshop will walk you through creating a Web Database App, setti
 * [Create a Kintone Web Database App](#create-a-kintone-web-database-app)
 * [Kintone API Token](#kintone-api-token)
 * [Create a `.env` File](#create-a-env-file)
+* [Workshop Steps](#workshop-steps)
+  * [Files to Edit](#files-to-edit)
+  * [`+page.svelte` File](#pagesvelte-file)
+  * [`+server.js` File](#serverjs-file)
+  * [Solutions to the Tasks](#solutions-to-the-tasks)
 * [Appendix](#appendix)
   * [What is Svelte?](#what-is-svelte)
   * [What is Kintone?](#what-is-kintone)
 * [Debugging - Let's Fix Those Problems 💪](#debugging---lets-fix-those-problems-)
   * [`npm install` command is not working](#npm-install-command-is-not-working)
+  * [Unable to Add Card?](#unable-to-add-card)
+  * [Unable to Add a Card?](#unable-to-add-a-card)
 
 ---
 
@@ -65,16 +72,21 @@ npm run dev
 
 ## Create a Kintone Web Database App
 
-| Steps                                               | Screenshot                                              |
-| -------------------------------------------------- | ------------------------------------------------------- |
-| From your portal, click the add app button         | ![Portal](./docs/images/portal.png)                     |
-| And create an app from scratch                     | ![CreateApp](./docs/images/create-app.png)              |
-| Add a Text box, and a Radio Button                 | ![build-database-1](./docs/images/build-database-1.png) |
-| Edit the settings of the text box                  | ![build-database-2](./docs/images/build-database-2.png) |
-| Change the label, and field code (case sensitive!) | ![build-database-3](./docs/images/build-database-3.png) |
-| Once more for the Radio Button                     | ![build-database-4](./docs/images/build-database-4.png) |
-| Change the label, and field code (case sensitive!) | ![build-database-5](./docs/images/build-database-5.png) |
-| Last, don't forget to save your changes!           | ![updateApp](./docs/images/updateApp.png)               |
+| Steps                                                                                  | Screenshot                                                                                                                            |
+| -------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------- |
+| From the Kintone portal, click the [+] button to create an App                         | ![Click on the + button on the right of the Apps section from the Kintone Portal](./docs/images/build-database-01.png)                |
+| Select **Create App from Scratch** option                                              | ![Kintone Marketplace page > Create New App section > select the Create App from Scratch button](./docs/images/build-database-02.png) |
+| Name the App (Ex: _Kintone Cards_)                                                     | ![Set the App's name to Kintone Cards](./docs/images/build-database-03.png)                                                           |
+| Add **Text** and **Radio Button** fields                                               | ![Drag the text and radio button fields to the center](./docs/images/build-database-04.png)                                           |
+| Open the **Text** field settings                                                       | ![Hover over the text field gear > select the Settings option](./docs/images/build-database-05.png)                                   |
+| Set the **Name** (`Title`) and **Field Code** (`title`)                                | ![Set the Name to Title and Field Code to title](./docs/images/build-database-06.png)                                                 |
+| Open the **Radio Button** field settings                                               | ![Hover over the Radio Button field gear > select the Settings option](./docs/images/build-database-07.png)                           |
+| Set the **Name** (`Color`), **Options** (`Red` & `Blue`), and **Field Code** (`color`) | ![Set the Name to COlor, options to Red and Blue, and Field Code to color](./docs/images/build-database-08.png)                       |
+| Last, remember to save your changes!                                                   | ![Click on the blue Activate App button](./docs/images/build-database-09.png)                                                         |
+
+⚠️ Warning ⚠️
+* Field Code is case sensitive
+* Field Code and options must be as specified in the steps, or the code will not work
 
 ---
 
@@ -117,6 +129,117 @@ VITE_APITOKEN = "abcdefghijklmnopqrstuvwxyz"
 
 ---
 
+## Workshop Steps
+
+### Files to Edit
+1. Credentials - Create `.env` file by duplicating the [.env.example](.env.example) file
+1. Frontend that builds the cards - [src/routes/+page.svelte](src/routes/+page.svelte)
+1. Backend that connects with Kintone - [src/routes/kintone/+server.js](src/routes/kintone/+server.js)
+
+### `+page.svelte` File
+Two tasks in `+page.svelte` file:
+* [ ] Task 1 - Add the cards from Kintone to the `cardInfo` array
+* [ ] Task 2 - Add a loop to go through the `cardInfo` array and display the cards
+
+### `+server.js` File
+Two tasks in `+server.js` file:
+* [ ] Task 3 - Get our title and color of the card to POST to Kintone
+* [ ] Task 4 - Try filling out this POST fetch to Kintone
+
+### Solutions to the Tasks
+
+<details>
+  <summary>Task 1 - Add the cards from Kintone to the cardInfo array</summary>
+
+  File: [src/routes/+page.svelte](src/routes/+page.svelte)
+
+  ```javascript
+  cardsInfo.forEach((card) => {
+   cards.push({
+    title: card.title.value,
+    color: card.color.value,
+    id: card.Record_number.value
+   });
+  });
+  console.log(cards);
+  if (cards.length >= 1) {
+   visible = true;
+  }
+ };
+  ```
+
+</details>
+
+<details>
+  <summary>Task 2 - Add a loop to go through the cardInfo array and display the cards</summary>
+
+  File: [src/routes/+page.svelte](src/routes/+page.svelte)
+
+  ```javascript
+    {#each cards as card, i}
+     <div
+      class:blue-card={card.color === 'Blue'}
+      class:red-card={card.color === 'Red'}
+      in:fly|local={{ y: 200, duration: 2000 + i * 10000 }}
+     >
+      <p>{card.title}</p>
+      <label>
+       <input type="radio" bind:group={card.color} value="Red" name={i} />
+       Red
+      </label>
+      <label>
+       <input type="radio" bind:group={card.color} value="Blue" name={i} />
+       Blue
+      </label>
+     </div>
+    {/each}
+  ```
+
+</details>
+
+<details>
+  <summary>Task 3 - Get our title and color of the card to POST to Kintone</summary>
+
+  File: [src/routes/kintone/+server.js](src/routes/kintone/+server.js)
+
+  ```javascript
+  const body = await request.json();
+  let title = await body.title;
+  let color = await body.color
+  const requestBody = {
+    'app': appid,
+    'record': {
+    'title': {
+      'value': title
+    },
+    'color': {
+      'value': color
+    }
+    }
+  }
+  ```
+
+</details>
+
+<details>
+  <summary>Task 4 - Try filling out this POST fetch to Kintone</summary>
+
+  File: [src/routes/kintone/+server.js](src/routes/kintone/+server.js)
+
+  ```javascript
+  try {
+    let response = await fetch(postRecordsURL, fetchOptions);
+    const responseData = await response.json();
+    return new json(responseData);
+  } catch (error) {
+    console.log(error)
+  }
+  ```
+
+</details>
+
+---
+
 ## Appendix
 
 ### What is Svelte?
@@ -147,3 +270,27 @@ Here is a rundown of common problems that may occur & their solutions!
 
 * Mac: `nodenv local 14.5.0`
 * Windows: `nvm use 14.5.0`
+
+### Unable to Add Card?
+
+Did you get a `Invalid response from route /kintone: handler should return a Response object`?
+
+Error Message:
+
+```txt
+POSTING TO: https://undefined.kintone.com/k/v1/record.json?app=undefined title: null, color: null
+Invalid response from route /kintone: handler should return a Response object
+Error: Invalid response from route /kintone: handler should return a Response object
+    at render_endpoint (file:///Users/.../Downloads/intro-to-svelte/node_modules/@sveltejs/kit/src/runtime/server/endpoint.js:44:10)
+    ...
+```
+
+Looks like you forgot the `.env` file! 🤦  
+Make sure included your Kintone Subdomain in the `.env` file!
+
+### Unable to Add a Card?
+Are you getting no error message from the terminal nor the browser console but still unable to add a new card to the board (or Kintone)?
+
+Verify that
+* the Kintone App's API Token has permissions for `Add records` and `Edit records`
+* the Kintone App's settings has been saved and you clicked on the blue `Update App` button
