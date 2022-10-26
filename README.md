@@ -17,6 +17,7 @@ Our free, live workshop will walk you through creating a Web Database App, setti
   * [Files to Edit](#files-to-edit)
   * [`+page.svelte` File](#pagesvelte-file)
   * [`+server.js` File](#serverjs-file)
+  * [Solutions to the Tasks](#solutions-to-the-tasks)
 * [Appendix](#appendix)
   * [What is Svelte?](#what-is-svelte)
   * [What is Kintone?](#what-is-kintone)
@@ -143,6 +144,85 @@ Two tasks in `+page.svelte` file:
 Two tasks in `+server.js` file:
 * [ ] Task 3 - Get our title and color of the card to POST to Kintone
 * [ ] Task 4 - Try filling out this POST fetch to Kintone
+
+### Solutions to the Tasks
+
+<details>
+  <summary>Task 1</summary>
+
+  ```javascript
+    cardsInfo.forEach((card) => {
+    cards.push({
+      title: card.title.value,
+      color: card.color.value,
+      id: card.Record_number.value
+    });
+    });
+  ```
+
+</details>
+
+<details>
+  <summary>Task 2</summary>
+
+  ```javascript
+      {#each cards as card, i}
+      <div
+        class:blue-card={card.color === 'Blue'}
+        class:red-card={card.color === 'Red'}
+        in:fly|local={{ y: 200, duration: 2000 + i * 10000 }}
+      >
+        <p>{card.title}</p>
+        <label>
+        <input type="radio" bind:group={card.color} value="Red" name={i} />
+        Red
+        </label>
+        <label>
+        <input type="radio" bind:group={card.color} value="Blue" name={i} />
+        Blue
+        </label>
+      </div>
+      {/each}
+  ```
+
+</details>
+
+<details>
+  <summary>Task 3</summary>
+
+  ```javascript
+  const body = await request.json();
+  let title = await body.title;
+  let color = await body.color
+  const requestBody = {
+    'app': appid,
+    'record': {
+    'title': {
+      'value': title
+    },
+    'color': {
+      'value': color
+    }
+    }
+  }
+  ```
+
+</details>
+
+<details>
+  <summary>Task 4</summary>
+
+  ```javascript
+  try {
+    let response = await fetch(postRecordsURL, fetchOptions);
+    const responseData = await response.json();
+    return new json(responseData);
+  } catch (error) {
+    console.log(error)
+  }
+  ```
+
+</details>
 
 ---
 
