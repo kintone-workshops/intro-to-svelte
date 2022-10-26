@@ -152,13 +152,18 @@ Two tasks in `+server.js` file:
   <summary>Task 1</summary>
 
   ```javascript
-    cardsInfo.forEach((card) => {
-    cards.push({
-      title: card.title.value,
-      color: card.color.value,
-      id: card.Record_number.value
-    });
-    });
+  cardsInfo.forEach((card) => {
+   cards.push({
+    title: card.title.value,
+    color: card.color.value,
+    id: card.Record_number.value
+   });
+  });
+  console.log(cards);
+  if (cards.length >= 1) {
+   visible = true;
+  }
+ };
   ```
 
 </details>
@@ -167,23 +172,23 @@ Two tasks in `+server.js` file:
   <summary>Task 2</summary>
 
   ```javascript
-      {#each cards as card, i}
-      <div
-        class:blue-card={card.color === 'Blue'}
-        class:red-card={card.color === 'Red'}
-        in:fly|local={{ y: 200, duration: 2000 + i * 10000 }}
-      >
-        <p>{card.title}</p>
-        <label>
-        <input type="radio" bind:group={card.color} value="Red" name={i} />
-        Red
-        </label>
-        <label>
-        <input type="radio" bind:group={card.color} value="Blue" name={i} />
-        Blue
-        </label>
-      </div>
-      {/each}
+    {#each cards as card, i}
+     <div
+      class:blue-card={card.color === 'Blue'}
+      class:red-card={card.color === 'Red'}
+      in:fly|local={{ y: 200, duration: 2000 + i * 10000 }}
+     >
+      <p>{card.title}</p>
+      <label>
+       <input type="radio" bind:group={card.color} value="Red" name={i} />
+       Red
+      </label>
+      <label>
+       <input type="radio" bind:group={card.color} value="Blue" name={i} />
+       Blue
+      </label>
+     </div>
+    {/each}
   ```
 
 </details>
