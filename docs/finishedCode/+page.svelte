@@ -43,7 +43,7 @@
 				})
 			});
 			const cardResponse = await cardsRequest.json();
-			title = ''
+			title = '';
 			getCards();
 		} catch (error) {
 			console.log(error);
