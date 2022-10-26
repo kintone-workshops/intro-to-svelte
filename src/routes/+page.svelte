@@ -1,9 +1,11 @@
 <script>
+	// Our cards array. We'll need to fill this with cards from our Kintone database...
 	let cards = [];
-	import { fly } from 'svelte/transition';
+	// Default color of red, and the text on each card.
 	let color = 'Red';
 	let title = '';
 
+	// A function to GET cards from our backend.
 	const getCards = async () => {
 		const cardsRequest = await fetch('/kintone', {
 			method: 'GET',
@@ -14,21 +16,16 @@
 		});
 		const cardsInfo = await cardsRequest.json();
 
+		// Resetting our array in case the GET button is pressed multiple times.
 		cards.length = 0;
 
 		cardsInfo.forEach((card) => {
-			cards.push({
-				title: card.title.value,
-				color: card.color.value,
-				id: card.Record_number.value
-			});
+			// TODO We need to add our cards to our card array here!
 		});
 		console.log(cards);
-		if (cards.length >= 1) {
-			visible = true;
-		}
 	};
 
+	// Our POST request to our backend.
 	const addCard = async (addCardTitle, addCardColor) => {
 		try {
 			const cardsRequest = await fetch('/kintone', {
@@ -43,7 +40,9 @@
 				})
 			});
 			const cardResponse = await cardsRequest.json();
-			title = ''
+			// Reset the title value of our add card.
+			title = '';
+			// Re-GET the cards after we posted a new one!
 			getCards();
 		} catch (error) {
 			console.log(error);
@@ -51,33 +50,13 @@
 	};
 </script>
 
-<svelte:head>
-	<style>
-		@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP&display=swap');
-	</style>
-</svelte:head>
-
 <div class="main">
 	<div class="grid-container">
 		<div class="left">
 			<button on:click={getCards}> Get Cards </button>
 			<div class="card-row">
 				{#each cards as card, i}
-					<div
-						class:blue-card={card.color === 'Blue'}
-						class:red-card={card.color === 'Red'}
-						in:fly|local={{ y: 200, duration: 2000 + i * 400 }}
-					>
-						<p>{card.title}</p>
-						<label>
-							<input type="radio" bind:group={card.color} value="Red" name={i} />
-							Red
-						</label>
-						<label>
-							<input type="radio" bind:group={card.color} value="Blue" name={i} />
-							Blue
-						</label>
-					</div>
+				<!-- TODO: Here, we'll need to loop through our cards Array, and display each card, with its title and color. -->
 				{/each}
 			</div>
 		</div>
@@ -100,7 +79,6 @@
 
 <style>
 	.main {
-		font-family: 'Noto Sans JP';
 		color: aliceblue;
 	}
 
