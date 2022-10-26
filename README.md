@@ -24,6 +24,7 @@ Our free, live workshop will walk you through creating a Web Database App, setti
 * [Debugging - Let's Fix Those Problems 💪](#debugging---lets-fix-those-problems-)
   * [`npm install` command is not working](#npm-install-command-is-not-working)
   * [Unable to Add Card?](#unable-to-add-card)
+  * [Unable to Add a Card?](#unable-to-add-a-card)
 
 ---
 
@@ -273,3 +274,10 @@ Error: Invalid response from route /kintone: handler should return a Response ob
 
 Looks like you forgot the `.env` file! 🤦  
 Make sure included your Kintone Subdomain in the `.env` file!
+
+### Unable to Add a Card?
+Are you getting no error message from the terminal nor the browser console but still unable to add a new card to the board (or Kintone)?
+
+Verify that
+* the Kintone App's API Token has permissions for `Add records` and `Edit records`
+* the Kintone App's settings has been saved and you clicked on the blue `Update App` button
