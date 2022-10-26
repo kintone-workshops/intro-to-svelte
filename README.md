@@ -65,16 +65,21 @@ npm run dev
 
 ## Create a Kintone Web Database App
 
-| Steps                                               | Screenshot                                              |
-| -------------------------------------------------- | ------------------------------------------------------- |
-| From your portal, click the add app button         | ![Portal](./docs/images/portal.png)                     |
-| And create an app from scratch                     | ![CreateApp](./docs/images/create-app.png)              |
-| Add a Text box, and a Radio Button                 | ![build-database-1](./docs/images/build-database-1.png) |
-| Edit the settings of the text box                  | ![build-database-2](./docs/images/build-database-2.png) |
-| Change the label, and field code (case sensitive!) | ![build-database-3](./docs/images/build-database-3.png) |
-| Once more for the Radio Button                     | ![build-database-4](./docs/images/build-database-4.png) |
-| Change the label, and field code (case sensitive!) | ![build-database-5](./docs/images/build-database-5.png) |
-| Last, don't forget to save your changes!           | ![updateApp](./docs/images/updateApp.png)               |
+| Steps                                                                                  | Screenshot                                                                                                                            |
+| -------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------- |
+| From the Kintone portal, click the [+] button to create an App                         | ![Click on the + button on the right of the Apps section from the Kintone Portal](./docs/images/build-database-01.png)                |
+| Select **Create App from Scratch** option                                              | ![Kintone Marketplace page > Create New App section > select the Create App from Scratch button](./docs/images/build-database-02.png) |
+| Name the App (Ex: _Kintone Cards_)                                                     | ![Set the App's name to Kintone Cards](./docs/images/build-database-03.png)                                                           |
+| Add **Text** and **Radio Button** fields                                               | ![Drag the text and radio button fields to the center](./docs/images/build-database-04.png)                                           |
+| Open the **Text** field settings                                                       | ![Hover over the text field gear > select the Settings option](./docs/images/build-database-05.png)                                   |
+| Set the **Name** (`Title`) and **Field Code** (`title`)                                | ![Set the Name to Title and Field Code to title](./docs/images/build-database-06.png)                                                 |
+| Open the **Radio Button** field settings                                               | ![Hover over the Radio Button field gear > select the Settings option](./docs/images/build-database-07.png)                           |
+| Set the **Name** (`Color`), **Options** (`Red` & `Blue`), and **Field Code** (`color`) | ![Set the Name to COlor, options to Red and Blue, and Field Code to color](./docs/images/build-database-08.png)                       |
+| Last, remember to save your changes!                                                   | ![Click on the blue Activate App button](./docs/images/build-database-09.png)                                                         |
+
+⚠️ Warning ⚠️
+* Field Code is case sensitive
+* Field Code and options must be as specified in the steps, or the code will not work
 
 ---
 
