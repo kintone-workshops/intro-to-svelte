@@ -13,6 +13,10 @@ Our free, live workshop will walk you through creating a Web Database App, setti
 * [Create a Kintone Web Database App](#create-a-kintone-web-database-app)
 * [Kintone API Token](#kintone-api-token)
 * [Create a `.env` File](#create-a-env-file)
+* [Workshop Steps](#workshop-steps)
+  * [Files to Edit](#files-to-edit)
+  * [`+page.svelte` File](#pagesvelte-file)
+  * [`+server.js` File](#serverjs-file)
 * [Appendix](#appendix)
   * [What is Svelte?](#what-is-svelte)
   * [What is Kintone?](#what-is-kintone)
@@ -120,6 +124,25 @@ VITE_APITOKEN = "abcdefghijklmnopqrstuvwxyz"
 
 ### ⚠️ DO NOT DELETE THE [.env.example](.env.example) FILE!  <!-- omit in toc -->
 [.env.example](.env.example) is used by env-cmd to verify that `.env` file is correctly configured.
+
+---
+
+## Workshop Steps
+
+### Files to Edit
+1. Credentials - Create `.env` file by duplicating the [.env.example](.env.example) file
+1. Frontend that builds the cards - [src/routes/+page.svelte](src/routes/+page.svelte)
+1. Backend that connects with Kintone - [src/routes/kintone/+server.js](src/routes/kintone/+server.js)
+
+### `+page.svelte` File
+Two tasks in `+page.svelte` file:
+* [ ] Task 1 - Add the cards from Kintone to the `cardInfo` array
+* [ ] Task 2 - Add a loop to go through the `cardInfo` array and display the cards
+
+### `+server.js` File
+Two tasks in `+server.js` file:
+* [ ] Task 3 - Get our title and color of the card to POST to Kintone
+* [ ] Task 4 - Try filling out this POST fetch to Kintone
 
 ---
 
