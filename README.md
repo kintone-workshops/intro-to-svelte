@@ -18,6 +18,7 @@ Our free, live workshop will walk you through creating a Web Database App, setti
   * [What is Kintone?](#what-is-kintone)
 * [Debugging - Let's Fix Those Problems 💪](#debugging---lets-fix-those-problems-)
   * [`npm install` command is not working](#npm-install-command-is-not-working)
+  * [Unable to Add Card?](#unable-to-add-card)
 
 ---
 
@@ -152,3 +153,20 @@ Here is a rundown of common problems that may occur & their solutions!
 
 * Mac: `nodenv local 14.5.0`
 * Windows: `nvm use 14.5.0`
+
+### Unable to Add Card?
+
+Did you get a `Invalid response from route /kintone: handler should return a Response object`?
+
+Error Message:
+
+```txt
+POSTING TO: https://undefined.kintone.com/k/v1/record.json?app=undefined title: null, color: null
+Invalid response from route /kintone: handler should return a Response object
+Error: Invalid response from route /kintone: handler should return a Response object
+    at render_endpoint (file:///Users/.../Downloads/intro-to-svelte/node_modules/@sveltejs/kit/src/runtime/server/endpoint.js:44:10)
+    ...
+```
+
+Looks like you forgot the `.env` file! 🤦  
+Make sure included your Kintone Subdomain in the `.env` file!
