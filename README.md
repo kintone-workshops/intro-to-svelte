@@ -25,6 +25,7 @@ Our free, live workshop will walk you through creating a Web Database App, setti
   * [`npm install` command is not working](#npm-install-command-is-not-working)
   * [Unable to Add Card?](#unable-to-add-card)
   * [Unable to Add a Card?](#unable-to-add-a-card)
+  * [Unexpected end of JSON input Error?](#unexpected-end-of-json-input-error)
 
 ---
 
@@ -294,3 +295,13 @@ Are you getting no error message from the terminal nor the browser console but s
 Verify that
 * the Kintone App's API Token has permissions for `Add records` and `Edit records`
 * the Kintone App's settings has been saved and you clicked on the blue `Update App` button
+
+### Unexpected end of JSON input Error?
+
+Solution: Verify that you have `Saved` and `Updated` the Kintone App after generating the API Token.
+
+Error Message:
+
+```shell
+Uncaught (in promise) SyntaxError: Unexpected end of JSON input at HTMLButtonElement.getCards (+page.svelte? [sm]:17:40)”
+```
