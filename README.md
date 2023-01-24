@@ -27,6 +27,7 @@ Our free, live workshop will walk you through creating a Web Database App, setti
   * [Unable to Add Card?](#unable-to-add-card)
   * [Unable to Add a Card?](#unable-to-add-a-card)
   * [Unexpected end of JSON input Error?](#unexpected-end-of-json-input-error)
+  * [Array.addCard Error?](#arrayaddcard-error)
 
 ---
 
@@ -311,4 +312,17 @@ Error Message:
 
 ```shell
 Uncaught (in promise) SyntaxError: Unexpected end of JSON input at HTMLButtonElement.getCards (+page.svelte? [sm]:17:40)”
+```
+
+### Array.addCard Error?
+
+Solution: Verify that [server.js](src/routes/kintone/+server.js)'s POST function is returning a `responseData` object. This object does not have a `.records` property.
+
+⚠️ Common mistake if you are copying and pasting from the GET function.
+
+Error Message:
+
+```shell
+SyntaxError: Unexpected end of JSON input
+    at Array.addCard (+page.svelte:47:44)
 ```
