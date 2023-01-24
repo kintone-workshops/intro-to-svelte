@@ -10,6 +10,7 @@ Our free, live workshop will walk you through creating a Web Database App, setti
 * [Completed Project](#completed-project)
 * [Get Started](#get-started)
 * [Get Your Free Kintone Database](#get-your-free-kintone-database)
+* [Workshop Slides](#workshop-slides)
 * [Create a Kintone Web Database App](#create-a-kintone-web-database-app)
 * [Kintone API Token](#kintone-api-token)
 * [Create a `.env` File](#create-a-env-file)
@@ -68,6 +69,12 @@ npm run dev
 |                                                                                            |                                                                                                                      |
 | ------------------------------------------------------------------------------------------ | -------------------------------------------------------------------------------------------------------------------- |
 | ![Step 1: Fill out the Kintone Developer license sign-up form](./docs/images/SignUp-1.png) | ![Step 2: Email address will be the login name & the subdomain will be your unique link](./docs/images/SignUp-2.png) |
+
+---
+
+## Workshop Slides
+
+Check out the [slides.pdf](./slides.pdf) file for the workshop slides!
 
 ---
 
